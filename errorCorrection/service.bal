@@ -1,0 +1,47 @@
+import ballerina/http;
+import ballerina/io;
+
+configurable string apiKey = ?;
+
+type SpellCheckRequest record {|
+    string content;
+|};
+
+type SaplingRequest record {|
+    string key;
+    string text;
+    string session_id;
+|};
+
+type EditBody record {|
+    string end;
+    string id;
+    string replacement;
+    string sentence;
+    string sentence_start;
+    string 'start;
+|};
+
+type SaplingResponse record {|
+    EditBody[] edits;
+|};
+
+http:Client saplingClient = check new ("https://api.sapling.ai");
+
+service /api/posts on new http:Listener(8080) {
+
+    resource function post spellings(SpellCheckRequest request) returns error? {
+        SaplingRequest saplingRequest = {
+            'key: apiKey,
+            text: request.content,
+            session_id: "session1"
+        };
+        SaplingResponse response = check saplingClient->/api/v1/spellcheck.post(saplingRequest);
+        int errorCount = 0;
+        foreach EditBody edit in response.edits {
+            io:println(string `${edit.sentence} : ${edit.replacement}`);
+            errorCount = errorCount + 1;
+        }
+        io:println(string `Total errors: ${errorCount}`);
+    }
+}
