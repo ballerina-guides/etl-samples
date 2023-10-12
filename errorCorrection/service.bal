@@ -14,12 +14,12 @@ type SaplingRequest record {|
 |};
 
 type EditBody record {|
-    string end;
+    int end;
     string id;
     string replacement;
     string sentence;
-    string sentence_start;
-    string 'start;
+    int sentence_start;
+    int 'start;
 |};
 
 type SaplingResponse record {|
