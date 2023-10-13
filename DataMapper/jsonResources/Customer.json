@@ -1,0 +1,16 @@
+{
+    "customer_id": "C1234",
+    "first_name": "John",
+    "last_name": "Doe",
+    "contact": {
+        "email": "johndoe@example.com",
+        "phone_number": "123-456-7890"
+    },
+    "address": {
+        "street": "123 Main St",
+        "city": "Anytown",
+        "state": "CA",
+        "postal_code": "12345",
+        "country": "United States"
+    }
+}
