@@ -1,5 +1,5 @@
-import ballerina/persist;
 import ballerina/io;
+import ballerina/persist;
 
 type CustomerData record {|
     string name;
@@ -17,7 +17,7 @@ type OrderWithCustomer record {|
     |} customer;
 |};
 
-Client sClient = check new ();
+final Client dbClient = check new;
 
 public function main() returns error? {
     check getOrderData();
@@ -26,7 +26,7 @@ public function main() returns error? {
 }
 
 public function getOrderData() returns error? {
-    stream<OrderData, persist:Error?> orders = sClient->/orderdata();
+    stream<OrderData, persist:Error?> orders = dbClient->/orderdata();
     check from var orderData in orders
         do {
             io:println(orderData);
@@ -34,8 +34,7 @@ public function getOrderData() returns error? {
 }
 
 public function getCustomerData() returns error? {
-    stream<Customer, persist:Error?> customers = sClient->/customers();
-
+    stream<Customer, persist:Error?> customers = dbClient->/customers();
     check from var customerData in customers
         do {
             io:println(customerData);
@@ -43,7 +42,6 @@ public function getCustomerData() returns error? {
 }
 
 public function getOrderWithCustomer(string orderId) returns error? {
-    OrderWithCustomer orderwithCustomer = check sClient->/orderdata/[orderId];
-
+    OrderWithCustomer orderwithCustomer = check dbClient->/orderdata/[orderId];
     io:println(orderwithCustomer);
 }
