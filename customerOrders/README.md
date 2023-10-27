@@ -19,7 +19,7 @@ The `password` should be replaced with the actual password that will be used for
 1. Pull the official docker image for MySQL and run it on a docker container
 
 ```sh
-    docker run --rm -d --name mysql-etl -p 3305:3306 -e MYSQL_ROOT_PASSWORD=sqletl123 mysql:latest
+    $ docker run --rm -d --name mysql-etl -p 3305:3306 -e MYSQL_ROOT_PASSWORD=sqletl123 mysql:latest
 ```
 Provide a prefered password for `MYSQL_ROOT_PASSWORD`.
 
@@ -28,15 +28,15 @@ Provide a prefered password for `MYSQL_ROOT_PASSWORD`.
 3. Copy the `script.sql` inside the `generated` directory and the `insertData.sql` inside the project root directory to the container.
 
 ```sh
-    docker cp <path/to/script.sql> mysql-etl:/script.sql
-    docker cp <path/to/insertData.sql> mysql-etl:/insertData.sql
+    $ docker cp <path/to/script.sql> mysql-etl:/script.sql
+    $ docker cp <path/to/insertData.sql> mysql-etl:/insertData.sql
 ```
 `<path/to/script.sql>` and `<path/to/insertData.sql>` should be replaced with the actual paths to the script files.
 
 4. Run the MySQL client inside the container and connect to the MySQL server.
 
 ```sh
-    docker exec -it mysql-etl mysql -uroot -p
+    $ docker exec -it mysql-etl mysql -uroot -p
 ```
 and enter the password given for `MYSQL_ROOT_PASSWORD` when prompted.
 
