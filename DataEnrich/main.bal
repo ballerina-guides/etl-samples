@@ -31,11 +31,22 @@ type EnrichedLead record {|
     string phone;
 |};
 
+type LeadInfoResponse record {
+    string Id;
+    string Name;
+    string Email;
+    string Company;
+    string Status;
+    string Phone;
+};
+
 service /sales on new http:Listener(8080) {
 
     resource function post leads/[string id](LeadInfoRequst req) returns EnrichedLead|error {
-        salesforce:Client baseClient = check new (sfConfig);
-        record {} res = check baseClient->getById("Lead", id, ["Id", "Name", "Email", "Company", "Status", "Phone"]);
+        salesforce:Client sfClient = check new (sfConfig);
+        // Get selected lead data of given lead ID.
+        LeadInfoResponse res = check sfClient->getById("Lead", id,
+            ["Id", "Name", "Email", "Company", "Status", "Phone"], LeadInfoResponse);
         return {
             id: id,
             name: req.name,
