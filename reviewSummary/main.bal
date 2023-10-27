@@ -36,7 +36,7 @@ service /api/reviews on new http:Listener(8080) {
             if SummaryResponse.choices.length() == 0 {
                 check error("No summary received.");
             }
-            string content = check SummaryResponse.choices[0].message?.content.ensureType(string);
+            string content = check SummaryResponse.choices[0].message?.content.ensureType();
             io:println(content);
         } on fail error e {
             io:println(e.message());
