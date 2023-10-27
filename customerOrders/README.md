@@ -1,6 +1,6 @@
 ## Generate the persist client object, types, and scripts
 
-1. Run `bal persist generate`.
+1. Run `$ bal persist generate`.
 
 2. Edit the generated `Config.toml` file to add the database configurations.
 
@@ -23,7 +23,7 @@ The `password` should be replaced with the actual password that will be used for
 ```
 Provide a prefered password for `MYSQL_ROOT_PASSWORD`.
 
-2. Execute `docker ps` to check if the container is running.
+2. Execute `$ docker ps` to check if the container is running.
 
 3. Copy the `script.sql` inside the `generated` directory and the `insertData.sql` inside the project root directory to the container.
 
@@ -54,4 +54,4 @@ and enter the password given for `MYSQL_ROOT_PASSWORD` when prompted.
     source insertData.sql
 ```
 
-7. Execute `bal run` to run the sample.
+7. Execute `$ bal run` to run the sample.

@@ -1,5 +1,5 @@
-import ballerina/persist;
 import ballerina/io;
+import ballerina/persist;
 
 type CustomerData record {|
     string name;
@@ -13,7 +13,6 @@ type OrderWithCustomer record {|
     record {|
         string name;
         string email;
-        string phone;
     |} customer;
 |};
 
