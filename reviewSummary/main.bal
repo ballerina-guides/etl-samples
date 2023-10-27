@@ -12,6 +12,7 @@ final chat:Client openAiChat = check new ({auth: {token: openAIKey}});
 
 service /api/reviews on new http:Listener(8080) {
     resource function post summary(SummaryRequest summaryRequest) returns error? {
+        // Send the model and chat message in request.
         chat:CreateChatCompletionRequest request = {
             model: "gpt-3.5-turbo",
             messages: [
@@ -32,6 +33,7 @@ service /api/reviews on new http:Listener(8080) {
             ]
         };
         do {
+            // Call the OpenAI chat completion endpoint and retrive chat completion response.
             chat:CreateChatCompletionResponse SummaryResponse = check openAiChat->/chat/completions.post(request);
             if SummaryResponse.choices.length() == 0 {
                 check error("No summary received.");
