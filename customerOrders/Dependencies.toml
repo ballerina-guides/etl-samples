@@ -152,7 +152,7 @@ modules = [
 ]
 
 [[package]]
-org = "shammi"
+org = "etl"
 name = "customerOrders"
 version = "0.1.0"
 dependencies = [
@@ -166,6 +166,6 @@ dependencies = [
 	{org = "ballerinax", name = "persist.sql"}
 ]
 modules = [
-	{org = "shammi", packageName = "customerOrders", moduleName = "customerOrders"}
+	{org = "etl", packageName = "customerOrders", moduleName = "customerOrders"}
 ]
 
