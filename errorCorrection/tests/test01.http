@@ -1,4 +1,4 @@
-POST http://localhost:8080/api/posts/spellings
+POST http://localhost:8080/api/posts/spell-check
 
 {
     "content": "Join us for an exeptional academic experience!

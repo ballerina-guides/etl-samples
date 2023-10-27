@@ -30,16 +30,17 @@ http:Client saplingClient = check new ("https://api.sapling.ai");
 
 service /api/posts on new http:Listener(8080) {
 
-    resource function post spellings(SpellCheckRequest request) returns error? {
+    resource function post spell\-check(SpellCheckRequest request) returns error? {
         SaplingRequest saplingRequest = {
             'key: apiKey,
             text: request.content,
             session_id: "session1"
         };
+        // Get response from Sapling with spellings checked.
         SaplingResponse response = check saplingClient->/api/v1/spellcheck.post(saplingRequest);
         int errorCount = 0;
         foreach EditBody edit in response.edits {
-            io:println(string `${edit.sentence} : ${edit.replacement}`);
+            io:println(string `${edit.sentence}: ${edit.replacement}`);
             errorCount = errorCount + 1;
         }
         io:println(string `Total errors: ${errorCount}`);
