@@ -60,6 +60,7 @@ type CustomerData record {
     Address address;
 };
 
+// Data mapping from customer, order and inventory data to shipment data.
 function getShipment(CustomerData customerData, OrderData orderData, InventoryData inventoryData)
     returns ShipmentData => {
     customer: {
