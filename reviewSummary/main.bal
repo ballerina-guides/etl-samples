@@ -18,22 +18,22 @@ service /api/reviews on new http:Listener(8080) {
                 {
                     role: "user",
                     content: string `
-                    Extract the following details in JSON from the reviews given.
-                        {
-                            good_points: string,
-                            bad_points: string,
-                            improvement_points: string
-                        }
-                    The fields should contain points extracted from all reviews
-                    Here are the reviews:
-                    ${string:'join(",", ...summaryRequest.reviews)}
+                        Extract the following details in JSON from the reviews given.
+                            {
+                                good_points: string,
+                                bad_points: string,
+                                improvement_points: string
+                            }
+                        The fields should contain points extracted from all reviews
+                        Here are the reviews:
+                        ${string:'join(",", ...summaryRequest.reviews)}
                     `
                 }
             ]
         };
         do {
             chat:CreateChatCompletionResponse SummaryResponse = check openAiChat->/chat/completions.post(request);
-            if SummaryResponse.choices.length() < 1 {
+            if SummaryResponse.choices.length() == 0 {
                 check error("No summary received.");
             }
             string content = check SummaryResponse.choices[0].message?.content.ensureType(string);

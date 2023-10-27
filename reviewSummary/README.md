@@ -12,7 +12,7 @@ openAIKey = "<OPEN_AI_KEY>"
 ### Running the sample
 Run the following command from the root directory of the sample.
 ```ballerina
-bal run
+$ bal run
 ```
 
 ### Send a request
@@ -24,7 +24,7 @@ POST http://localhost:8080/api/reviews/summary
     But there were some software glitches and I couldn't find enough instructions to troubleshoot them.
     Would be great if they provided more detailed manuals.",
     "The smartphone I ordered arrived with a damaged screen. They need to be careful when packaging.",
-    "Extrmely satisfied with my orders. Would suggest this place to anyone.",
+    "Extremely satisfied with my orders. Would suggest this place to anyone.",
     "Everything is great about them expect some deliveries take too long.
     Would suggest improving shipping speed to reduce delays."]
 }
