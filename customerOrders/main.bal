@@ -25,6 +25,7 @@ public function main() returns error? {
 }
 
 public function getOrderData() returns error? {
+    // Retrive data on all orders.
     stream<OrderData, persist:Error?> orders = dbClient->/orderdata();
     check from var orderData in orders
         do {
@@ -33,6 +34,7 @@ public function getOrderData() returns error? {
 }
 
 public function getCustomerData() returns error? {
+    //  Retrieve data on all customers.
     stream<Customer, persist:Error?> customers = dbClient->/customers();
     check from var customerData in customers
         do {
@@ -41,6 +43,7 @@ public function getCustomerData() returns error? {
 }
 
 public function getOrderWithCustomer(string orderId) returns error? {
+    // Retrive order data with customer data for given order id.
     OrderWithCustomer orderwithCustomer = check dbClient->/orderdata/[orderId];
     io:println(orderwithCustomer);
 }
