@@ -1,0 +1,11 @@
+email,helpful,remarks
+example1@example.com,Y,Great presentation
+example2@example.com,no,Needs improvement
+example3@example.com,yes,Very    informative
+example4@example.com,y,Excellent content
+example5@example.com,No,Too   long
+example6@example.com,Yes,Well-structured
+example7@example.com,Yes,Engaging speaker
+invalid-email.com,NO,Confusing slides
+example9@example.com,yeS,Outstanding session
+example10@example.com,yes,Helped a lot
