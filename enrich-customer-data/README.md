@@ -16,10 +16,5 @@ $ bal run
 
 ### Send a request
 ```
-POST http://localhost:8080/api/v1/customerWithGeoCode
-
-{
-    "customerId": "CUST0001",
-    "address": "1600 Amphitheatre Parkway,Mountain View,CA"
-}
+$ curl -X POST -d '{"customerId": "CUST0001", "address": "1600 Amphitheatre Parkway,Mountain View,CA"}' http://localhost:8080/api/v1/customerWithGeoCode
 ```
