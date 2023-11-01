@@ -1,4 +1,4 @@
-import ballerinax/googleapis.sheets as sheets;
+import ballerinax/googleapis.sheets;
 
 configurable string refreshToken = ?;
 configurable string clientId = ?;
@@ -18,7 +18,7 @@ final sheets:Client spreadsheetClient = check new ({
     }
 });
 
-public function loadToGoogleSheet(string sheetName, string workSheetName, SalesSummary[] salesSummary) returns error? {
+function loadToGoogleSheet(string sheetName, string workSheetName, SalesSummary[] salesSummary) returns error? {
     // create a new spread sheet
     sheets:Spreadsheet spreadsheet = check spreadsheetClient->createSpreadsheet(sheetName);
     string spreadSheetId = spreadsheet.spreadsheetId;
