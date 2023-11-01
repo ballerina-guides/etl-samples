@@ -53,7 +53,7 @@ modules = [
 ]
 
 [[package]]
-org = "etl"
+org = "lakshanweerasinghe"
 name = "clean_sensitive_data"
 version = "0.1.0"
 dependencies = [
@@ -61,6 +61,6 @@ dependencies = [
 	{org = "ballerinai", name = "observe"}
 ]
 modules = [
-	{org = "etl", packageName = "clean_sensitive_data", moduleName = "clean_sensitive_data"}
+	{org = "lakshanweerasinghe", packageName = "clean_sensitive_data", moduleName = "clean_sensitive_data"}
 ]
 
