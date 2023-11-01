@@ -284,9 +284,6 @@ dependencies = [
 	{org = "ballerina", name = "jballerina.java"},
 	{org = "ballerina", name = "observe"}
 ]
-modules = [
-	{org = "ballerinai", packageName = "observe", moduleName = "observe"}
-]
 
 [[package]]
 org = "ballerinax"
@@ -321,7 +318,6 @@ name = "extract_data_from_github"
 version = "0.1.0"
 dependencies = [
 	{org = "ballerina", name = "io"},
-	{org = "ballerinai", name = "observe"},
 	{org = "ballerinax", name = "github"}
 ]
 modules = [
