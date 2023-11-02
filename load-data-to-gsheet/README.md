@@ -1,4 +1,3 @@
-
 ## Steps to run the sample
 
 ### Obtaining Google sheets credentials
