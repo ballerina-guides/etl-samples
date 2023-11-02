@@ -9,7 +9,7 @@ type Customer record {|
 
 type GeoTaggedCustomer record {|
     *Customer;
-    decimal lattitude;
+    decimal latitude;
     decimal longitude;
 |};
 
@@ -40,7 +40,7 @@ service /api/v1 on new http:Listener(8080) {
             // enrich the customer data with location information
             return {
                 ...customer,
-                lattitude: response.results[0].geometry.location.lat,
+                latitude: response.results[0].geometry.location.lat,
                 longitude: response.results[0].geometry.location.lng
             };
         }
