@@ -1,25 +1,14 @@
 import ballerina/io;
-import ballerinax/googleapis.bigquery;
 import ballerina/uuid;
+import ballerinax/googleapis.bigquery;
 
-public type LeadAnalyticsData record {|
-    string LeadID;
-    string FirstName;
-    string LastName;
-    string Email;
-    string Phone;
-    string Company;
-    string Status;
-    string Source;
-    float LeadScore;
-    string LeadOwner;
-    string LeadCreatedDate;
-    string LastContactDate;
-    string LastActivity;
-    string Converted;
-    string ConversionDate;
-    float OpportunityAmount;
-    string OpportunityStage;
+public type SocialMediaInteraction record {|
+    string customerId;
+    string interactionId;
+    string interactionType;
+    string timestamp;
+    string platform;
+    string message;
 |};
 
 configurable string bigQueryAccessToken = ?;
@@ -27,12 +16,12 @@ configurable string projectId = ?;
 configurable string datasetId = ?;
 configurable string tableId = ?;
 
-bigquery:Client bigQueryClient = check new ({auth : {token: bigQueryAccessToken}});
+bigquery:Client bigQueryClient = check new ({auth: {token: bigQueryAccessToken}});
 
 public function main() returns error? {
-    LeadAnalyticsData[] leadsData = check io:fileReadCsv("./resources/leads_data.csv");
-    bigquery:TabledatainsertallrequestRows[] rows = from var lead in leadsData 
-                                                        select {insertId: uuid:createType1AsString(), 'json: lead};
+    SocialMediaInteraction[] interactions = check io:fileReadCsv("./resources/interactions.csv");
+    bigquery:TabledatainsertallrequestRows[] rows = from var interaction in interactions
+        select {insertId: uuid:createType1AsString(), 'json: interaction};
     bigquery:TableDataInsertAllRequest payload = {rows};
     _ = check bigQueryClient->insertAllTableData(projectId, datasetId, tableId, payload);
 }
