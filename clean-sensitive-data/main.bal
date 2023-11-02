@@ -9,7 +9,7 @@ public type Feedback record {|
 public type Result record {|
     string email;
     int feedback;
-    string remarks;
+    string cleanedRemarks;
 |};
 
 public function standardizeValues(string inputString) returns int {
@@ -36,16 +36,11 @@ public function removeExtraWhiteSpaces(string inputString) returns string {
 
 public function main() returns error? {
     Feedback[] feedbacks = check io:fileReadCsv("./resources/feedback.csv");
-    Result[] results = [];
-    foreach var {email, helpful, remarks} in feedbacks {
-        if isValidEmail(email) {
-            Result result = {
-                email,
-                feedback: standardizeValues(helpful),
-                remarks: removeExtraWhiteSpaces(remarks)
-            };
-            results.push(result);
-        }
-    }
+    Result[] results = from var {email, helpful, remarks} in feedbacks 
+           where isValidEmail(email)
+           let int feedback = standardizeValues(helpful)
+           let string cleanedRemarks = removeExtraWhiteSpaces(remarks)
+           select {email, feedback, cleanedRemarks};
     io:println(results);
+    
 }
