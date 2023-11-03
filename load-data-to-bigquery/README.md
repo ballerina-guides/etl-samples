@@ -27,7 +27,6 @@ tableId = "<TABLE_ID>"
 4. Find the `datasetId` from the project and replace with `<DATASET_ID>`.
 5. FInd the `tableId` from the dataset and replace with `<TABLE_ID>`.
 
-
 ### 3. Running the sample
 Run the following command from the root directory of the sample.
 ```ballerina
