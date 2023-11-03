@@ -1,0 +1,11 @@
+customerId,interactionId,platform,timestamp,interactionType,message
+1,101,Twitter,2023-11-01T10:30:00Z,Tweet,"Had a great experience with your product!"
+2,102,Facebook,2023-11-01T11:15:00Z,Post,"Your customer service is outstanding. Thank you!"
+3,103,Instagram,2023-11-01T12:00:00Z,Comment,"I love your new product design!"
+1,104,Instagram,2023-11-01T13:45:00Z,Post,"Sharing a picture of my recent purchase!"
+4,105,LinkedIn,2023-11-01T14:30:00Z,Message,"Interested in a partnership opportunity."
+2,106,Twitter,2023-11-01T15:15:00Z,Tweet,"Your latest update is a game-changer!"
+5,107,Facebook,2023-11-01T16:00:00Z,Comment,"This product saved my day. Highly recommended!"
+3,108,LinkedIn,2023-11-01T16:45:00Z,Message,"Requesting information about your services."
+4,109,Twitter,2023-11-01T17:30:00Z,Tweet,"Impressed with your company's growth."
+5,110,Instagram,2023-11-01T18:15:00Z,Comment,"Your team rocks! Great job!"
