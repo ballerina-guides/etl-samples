@@ -1,17 +1,16 @@
 ## Steps to run the sample
 
-### Obtaining Google sheets credentials
-1. Create a [Google account](https://accounts.google.com/signup/v2/createaccount)
-2. Obtain your tokens using this [link](https://developers.google.com/identity/protocols/oauth2) and include it in the `Config.toml` file.
-
-### Updating the Config.toml file
+### 1. Configuring the Config.toml file
+1. Create a `Config.toml` file in the root directory and add the below content.
 ```
 refreshToken = "<REFRESH_TOKEN>"
 clientId = "<CLIENT_ID>"
 clientSecret = "<CLIENT_SECRET>"
 ```
+2. Obtain your tokens using this [link](https://developers.google.com/identity/protocols/oauth2) 
+and replace with values in the `Config.toml`.
 
-### Running the sample
+### 2. Running the sample
 Run the following command from the root directory of the sample.
 ```ballerina
 $ bal run
