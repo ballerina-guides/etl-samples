@@ -7,51 +7,22 @@
 ```
     [customerOrders]
     host = "localhost"
-    port = 3305
+    port = 3306
     user = "root"
     password = "sqletl123"
     database = "customer_order"
 ```
-The `password` should be replaced with the actual password that will be used for `MYSQL_ROOT_PASSWORD` when setting up the database.
+`password` should be replaced with the actual password that will be used for `MYSQL_ROOT_PASSWORD` when setting up the database.
 
 ## Setting up the MySQL database on docker
 
-1. Pull the official docker image for MySQL and run it on a docker container
+1. To pull the official docker image for MySQL and run it on a docker container, run
 
 ```sh
-    $ docker run --rm -d --name mysql-etl -p 3305:3306 -e MYSQL_ROOT_PASSWORD=sqletl123 mysql:latest
+    $ docker compose up
 ```
-Provide a prefered password for `MYSQL_ROOT_PASSWORD`.
+This will execute the `docker-compose.yml` file inside the package directory and set up the `customer_order` database with all tables and entries. Make sure to provide the prefered password for `MYSQL_ROOT_PASSWORD` inside the `docker-compose.yml` file.
 
 2. Execute `$ docker ps` to check if the container is running.
 
-3. Copy the `script.sql` inside the `generated` directory and the `insertData.sql` inside the project root directory to the container.
-
-```sh
-    $ docker cp <path/to/script.sql> mysql-etl:/script.sql
-    $ docker cp <path/to/insertData.sql> mysql-etl:/insertData.sql
-```
-`<path/to/script.sql>` and `<path/to/insertData.sql>` should be replaced with the actual paths to the script files.
-
-4. Run the MySQL client inside the container and connect to the MySQL server.
-
-```sh
-    $ docker exec -it mysql-etl mysql -uroot -p
-```
-and enter the password given for `MYSQL_ROOT_PASSWORD` when prompted.
-
-5. Create a new database `customer_order` and use it.
-
-    ```sql
-        CREATE DATABASE customer_order;
-        USE customer_order;
-    ```
-
-6. Execute the `script.sql` file to create the tables and then the `insertData.sql` file to populate the created tables.
-
-```sql
-    source script.sql
-    source insertData.sql
-```
-
-7. Execute `$ bal run` to run the sample.
+3. Execute `$ bal run` to run the sample.

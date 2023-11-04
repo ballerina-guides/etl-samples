@@ -2,9 +2,9 @@ import ballerina/io;
 import ballerina/persist;
 
 type CustomerData record {|
+    string customerId;
     string name;
     string email;
-    string phone;
 |};
 
 type OrderWithCustomer record {|
@@ -35,7 +35,7 @@ public function getOrderData() returns error? {
 
 public function getCustomerData() returns error? {
     //  Retrieve data on all customers.
-    stream<Customer, persist:Error?> customers = dbClient->/customers();
+    stream<CustomerData, persist:Error?> customers = dbClient->/customers();
     check from var customerData in customers
         do {
             io:println(customerData);
