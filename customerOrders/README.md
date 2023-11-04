@@ -21,7 +21,7 @@
 ```sh
     $ docker compose up
 ```
-This will execute the `docker-compose.yml` file inside the package directory and set up the `customer_order` database with all tables and entries. Make sure to provide the prefered password for `MYSQL_ROOT_PASSWORD` inside the `docker-compose.yml` file.
+This will execute the `docker-compose.yml` file inside the package directory and set up the `customer_order` database with all tables and entries. Make sure to provide the preferred password for `MYSQL_ROOT_PASSWORD` inside the `docker-compose.yml` file.
 
 2. Execute `$ docker ps` to check if the container is running.
 
