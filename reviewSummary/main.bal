@@ -34,11 +34,11 @@ service /api/reviews on new http:Listener(8080) {
         };
         do {
             // Call the OpenAI chat completion endpoint and retrive chat completion response.
-            chat:CreateChatCompletionResponse SummaryResponse = check openAiChat->/chat/completions.post(request);
-            if SummaryResponse.choices.length() == 0 {
+            chat:CreateChatCompletionResponse summary = check openAiChat->/chat/completions.post(request);
+            if summary.choices.length() == 0 {
                 check error("No summary received.");
             }
-            string content = check SummaryResponse.choices[0].message?.content.ensureType();
+            string content = check summary.choices[0].message?.content.ensureType();
             io:println(content);
         } on fail error e {
             io:println(e.message());
