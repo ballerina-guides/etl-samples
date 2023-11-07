@@ -1,8 +1,8 @@
 ## Steps to run the sample
 
 ### Obtaining SalesForce credentials.
-1. Create a [SalesForce](https://login.salesforce.com/?locale=ap).
-2. Obtain client ID, client secret, refresh token, refresh URL and base URL and include them in the `Config.toml` file.
+1. Create a [SalesForce account](https://login.salesforce.com/?locale=ap).
+2.  Obtain client ID, client secret, refresh token, refresh URL, and base URL, then include them in the `Config.toml` file.
 
 ### Updating the Config.toml file
 ```
@@ -21,10 +21,7 @@ $ bal run
 
 ### Send a request
 ```
-POST http://localhost:8080/sales/leads/<LEAD_ID>
-
-{
-    "id": "<LEAD-ID>",
-    "name": "<LEAD-NAME>"
-}
+curl -X POST http://localhost:8080/sales/leads/<LEAD_ID> -H "Content-Type: application/json" -d '{"id":"<LEAD_ID>", "name":"<LEAD-NAME>"}'
+{"email":"johndoe@email.com", "company":"JohnDoe", "status":"Working - Contacted", "phone":"07643892", "id":"00Q5g00000RFk22EAD", "name":"Johann Gambolputty"}
 ```
+Replace <LEAD-ID> and <LEAD-NAME> with the correct details.

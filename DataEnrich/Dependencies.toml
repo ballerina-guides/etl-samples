@@ -309,9 +309,6 @@ dependencies = [
 	{org = "ballerina", name = "jballerina.java"},
 	{org = "ballerina", name = "observe"}
 ]
-modules = [
-	{org = "ballerinai", packageName = "observe", moduleName = "observe"}
-]
 
 [[package]]
 org = "ballerinax"
@@ -356,7 +353,6 @@ name = "DataEnrich"
 version = "0.1.0"
 dependencies = [
 	{org = "ballerina", name = "http"},
-	{org = "ballerinai", name = "observe"},
 	{org = "ballerinax", name = "salesforce"}
 ]
 modules = [
