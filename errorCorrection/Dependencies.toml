@@ -272,25 +272,12 @@ dependencies = [
 ]
 
 [[package]]
-org = "ballerinai"
-name = "observe"
-version = "0.0.0"
-dependencies = [
-	{org = "ballerina", name = "jballerina.java"},
-	{org = "ballerina", name = "observe"}
-]
-modules = [
-	{org = "ballerinai", packageName = "observe", moduleName = "observe"}
-]
-
-[[package]]
 org = "etl"
 name = "errorCorrection"
 version = "0.1.0"
 dependencies = [
 	{org = "ballerina", name = "http"},
-	{org = "ballerina", name = "io"},
-	{org = "ballerinai", name = "observe"}
+	{org = "ballerina", name = "io"}
 ]
 modules = [
 	{org = "etl", packageName = "errorCorrection", moduleName = "errorCorrection"}
