@@ -5,7 +5,7 @@
 
 [ballerina]
 dependencies-toml-version = "2"
-distribution-version = "2201.8.0"
+distribution-version = "2201.8.2"
 
 [[package]]
 org = "ballerina"
@@ -140,7 +140,7 @@ modules = [
 ]
 
 [[package]]
-org = "etl"
+org = "etl_samples"
 name = "customerOrders"
 version = "0.1.0"
 dependencies = [
@@ -153,6 +153,6 @@ dependencies = [
 	{org = "ballerinax", name = "persist.sql"}
 ]
 modules = [
-	{org = "etl", packageName = "customerOrders", moduleName = "customerOrders"}
+	{org = "etl_samples", packageName = "customerOrders", moduleName = "customerOrders"}
 ]
 
