@@ -32,16 +32,11 @@ service /api/reviews on new http:Listener(8080) {
                 }
             ]
         };
-        do {
-            // Call the OpenAI chat completion endpoint and retrive chat completion response.
-            chat:CreateChatCompletionResponse summary = check openAiChat->/chat/completions.post(request);
-            if summary.choices.length() == 0 {
-                check error("No summary received.");
-            }
+        // Call the OpenAI chat completion endpoint and retrive chat completion response.
+        chat:CreateChatCompletionResponse summary = check openAiChat->/chat/completions.post(request);
+        if summary.choices.length() > 0 {
             string content = check summary.choices[0].message?.content.ensureType();
             io:println(content);
-        } on fail error e {
-            io:println(e.message());
         }
     }
 }
