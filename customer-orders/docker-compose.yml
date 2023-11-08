@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+  mysql-etl:
+    image: mysql:latest
+    container_name: sql-etl
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: sqletl123
+    command: --authentication_policy=caching_sha2_password
+    volumes:
+      - ./init-script.sql:/docker-entrypoint-initdb.d/script.sql
