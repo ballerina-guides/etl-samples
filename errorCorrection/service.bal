@@ -26,7 +26,7 @@ type SaplingResponse record {|
     EditBody[] edits;
 |};
 
-http:Client saplingClient = check new ("https://api.sapling.ai");
+final http:Client saplingClient = check new ("https://api.sapling.ai");
 
 service /api/posts on new http:Listener(8080) {
 
