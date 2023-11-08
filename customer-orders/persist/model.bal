@@ -1,6 +1,6 @@
 import ballerina/persist as _;
 
-public type Customer record {|
+type Customer record {|
     readonly string customerId;
     string name;
     string email;
@@ -8,7 +8,7 @@ public type Customer record {|
     OrderData[] orders;
 |};
 
-public type OrderData record {|
+type OrderData record {|
    readonly string orderId;
    decimal price;
    Customer customer;
