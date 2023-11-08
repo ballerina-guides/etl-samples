@@ -1,0 +1,10 @@
+{
+    "productId": "12345",
+    "name": "Example Product",
+    "description": "This is an example product description.",
+    "category": "Electronics",
+    "price": 599.99,
+    "stockQuantity": 100,
+    "manufacturer": "Example Electronics Inc.",
+    "releaseDate": "2023-10-10"
+}

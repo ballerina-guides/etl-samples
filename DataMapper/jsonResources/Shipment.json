@@ -1,0 +1,18 @@
+{
+    "productId": "12345",
+    "productName": "Example Product",
+    "quantityShipped": 2,
+    "totalPrice": 1199.98,
+    "customer": {
+        "name": "John Doe",
+        "email": "johndoe@example.com",
+        "phoneNumber": "123-456-7890"
+    },
+    "shippingAddress": {
+        "street": "123 Main St",
+        "city": "Anytown",
+        "state": "CA",
+        "postalCode": "12345",
+        "country": "United States"
+    }
+}
