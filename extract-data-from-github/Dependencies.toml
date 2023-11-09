@@ -33,7 +33,7 @@ dependencies = [
 [[package]]
 org = "ballerina"
 name = "constraint"
-version = "1.4.0"
+version = "1.5.0"
 dependencies = [
 	{org = "ballerina", name = "jballerina.java"}
 ]
@@ -313,7 +313,7 @@ modules = [
 ]
 
 [[package]]
-org = "etl"
+org = "etl_samples"
 name = "extract_data_from_github"
 version = "0.1.0"
 dependencies = [
@@ -321,6 +321,6 @@ dependencies = [
 	{org = "ballerinax", name = "github"}
 ]
 modules = [
-	{org = "etl", packageName = "extract_data_from_github", moduleName = "extract_data_from_github"}
+	{org = "etl_samples", packageName = "extract_data_from_github", moduleName = "extract_data_from_github"}
 ]
 

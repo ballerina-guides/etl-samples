@@ -3,7 +3,7 @@
 ### 1. Configuring the Config.toml file
 1. Create a `Config.toml` file in the root directory and add the below content.
 ```toml
-[customer_orders]
+[extract_data_from_database]
 host = "localhost"
 port = 3306
 user = "root"

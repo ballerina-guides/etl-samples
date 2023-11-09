@@ -5,13 +5,13 @@
 
 [ballerina]
 dependencies-toml-version = "2"
-distribution-version = "2201.5.4"
+distribution-version = "2201.8.2"
 
 [[package]]
-org = "etl"
-name = "DataMapper"
+org = "etl_samples"
+name = "data_mapper"
 version = "0.1.0"
 modules = [
-	{org = "etl", packageName = "DataMapper", moduleName = "DataMapper"}
+	{org = "etl_samples", packageName = "data_mapper", moduleName = "data_mapper"}
 ]
 

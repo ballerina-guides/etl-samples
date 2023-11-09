@@ -4,7 +4,7 @@ configurable string refreshToken = ?;
 configurable string clientId = ?;
 configurable string clientSecret = ?;
 
-public type SalesSummary record {|
+type SalesSummary record {|
     string product;
     float sales;
 |};

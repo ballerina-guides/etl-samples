@@ -52,7 +52,6 @@ type ShipmentData record {
     } shippingAddress;
 };
 
-// Data mapping from customer, order and inventory data to shipment data.
 function getShipment(CustomerData customerData, OrderData orderData, InventoryData inventoryData)
     returns ShipmentData => {
     productId: orderData.productId,

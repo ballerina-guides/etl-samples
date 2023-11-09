@@ -1,12 +1,12 @@
 [package]
 org = "etl_samples"
-name = "extract_customer_orders"
+name = "extract_data_from_database"
 version = "0.1.0"
 distribution = "2201.8.2"
 
 [persist]
 datastore = "mysql"
-module = "customerOrders"
+module = "extract_data_from_database"
 
 [[platform.java17.dependency]]
 groupId = "io.ballerina.stdlib"

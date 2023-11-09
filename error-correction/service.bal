@@ -36,7 +36,6 @@ service /api/posts on new http:Listener(8080) {
             text: request.content,
             session_id: "session1"
         };
-        // Get response from Sapling with spellings checked.
         SaplingResponse response = check saplingClient->/api/v1/spellcheck.post(saplingRequest);
         int errorCount = 0;
         foreach EditBody edit in response.edits {

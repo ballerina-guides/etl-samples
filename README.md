@@ -5,8 +5,8 @@ This repository contains various code samples for ETL tasks written in Ballerina
 Each subdirectory contains relevant code and instructions for the corresponding task. Explore the subdirectories for detailed code samples and documentation.
 
 #### Data Extraction (E)
-- [Extract Data from Database](extract-customer-orders): Sample code for extracting customer orders from database.
-- [Extract Information From Unstructured Data](extract-using-ai): Sample code for extracting required information from unstructured data using AI.
+- [Extract Data from Database](extract-data-from-database): Sample code for extracting customer orders from database.
+- [Extract Information From Unstructured Data](extract-information-from-unstructured-data): Sample code for extracting required information from unstructured data using AI.
 - [Extract Data from GitHub](extract-data-from-github): Code samples for extracting data from GitHub.
 
 #### Data Transformation (T)

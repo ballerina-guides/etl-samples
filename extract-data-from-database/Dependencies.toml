@@ -141,7 +141,7 @@ modules = [
 
 [[package]]
 org = "etl_samples"
-name = "customer_orders"
+name = "extract_data_from_database"
 version = "0.1.0"
 dependencies = [
 	{org = "ballerina", name = "io"},
@@ -153,6 +153,6 @@ dependencies = [
 	{org = "ballerinax", name = "persist.sql"}
 ]
 modules = [
-	{org = "etl_samples", packageName = "customer_orders", moduleName = "customer_orders"}
+	{org = "etl_samples", packageName = "extract_data_from_database", moduleName = "extract_data_from_database"}
 ]
 

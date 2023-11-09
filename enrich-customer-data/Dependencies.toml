@@ -33,7 +33,7 @@ dependencies = [
 [[package]]
 org = "ballerina"
 name = "constraint"
-version = "1.4.0"
+version = "1.5.0"
 dependencies = [
 	{org = "ballerina", name = "jballerina.java"}
 ]
@@ -269,13 +269,13 @@ dependencies = [
 ]
 
 [[package]]
-org = "etl"
+org = "etl_samples"
 name = "enrich_customer_data"
 version = "0.1.0"
 dependencies = [
 	{org = "ballerina", name = "http"}
 ]
 modules = [
-	{org = "etl", packageName = "enrich_customer_data", moduleName = "enrich_customer_data"}
+	{org = "etl_samples", packageName = "enrich_customer_data", moduleName = "enrich_customer_data"}
 ]
 
