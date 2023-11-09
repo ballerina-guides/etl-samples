@@ -1,5 +1,5 @@
 [package]
 org = "etl_samples"
-name = "extract_using_ai"
+name = "extract_information_from_unstructured_data"
 version = "0.1.0"
 distribution = "2201.8.2"

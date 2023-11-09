@@ -296,7 +296,7 @@ modules = [
 
 [[package]]
 org = "etl_samples"
-name = "extract_using_ai"
+name = "extract_information_from_unstructured_data"
 version = "0.1.0"
 dependencies = [
 	{org = "ballerina", name = "http"},
@@ -304,6 +304,6 @@ dependencies = [
 	{org = "ballerinax", name = "openai.chat"}
 ]
 modules = [
-	{org = "etl_samples", packageName = "extract_using_ai", moduleName = "extract_using_ai"}
+	{org = "etl_samples", packageName = "extract_information_from_unstructured_data", moduleName = "extract_information_from_unstructured_data"}
 ]
 
