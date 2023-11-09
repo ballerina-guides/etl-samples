@@ -2,7 +2,7 @@
 
 ### 1. Configuring the Config.toml file
 1. Create a `Config.toml` file in the root directory and add the below content.
-```
+```toml
 [kafka_db_ingestion]
 host = "localhost"
 port = 3306

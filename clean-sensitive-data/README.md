@@ -2,6 +2,6 @@
 
 ### 1. Running the sample
 Run the following command from the root directory of the sample.
-```ballerina
+```sh
 $ bal run
 ```
