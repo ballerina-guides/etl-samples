@@ -1,6 +1,6 @@
 [package]
 org = "etl_samples"
-name = "customer_orders"
+name = "extract_customer_orders"
 version = "0.1.0"
 distribution = "2201.8.2"
 
