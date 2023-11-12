@@ -6,8 +6,8 @@
 [extract_data_from_database]
 host = "localhost"
 port = 3306
-user = "root"
-password = "sqletl123"
+user = "dbuser"
+password = "dbuser"
 database = "customer_order"
 ```
 

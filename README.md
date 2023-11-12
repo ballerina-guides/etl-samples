@@ -10,8 +10,8 @@ Each subdirectory contains relevant code and instructions for the corresponding 
 - [Extract Data from GitHub](extract-data-from-github): Sample code samples for extracting data from GitHub.
 
 #### Data Transformation (T)
-- [Remove Duplicates Using Logic](remove-duplicates-using-logic): Sample code remove duplicates using a custom logic.
-- [Remove Duplicates Using Query](remove-duplicates-using-query): Sample code for error correction in data.
+- [Remove Duplicates](remove-duplicates): Sample code for deduplication.
+- [Remove Approximate Duplicates](remove-approximate-duplicates): Sample code for approximate deduplication.
 - [Error Correction](error-correction): Sample code for error correction in data.
 - [Clean Sensitive Data](clean-sensitive-data): Sample code for cleaning sensitive data.
 - [Data Mapper](data-mapper): Sample code for data mapping between different structures.

@@ -1,5 +1,5 @@
 [package]
 org = "etl_samples"
-name = "remove_duplicates_using_logic"
+name = "remove_approximate_duplicates"
 version = "0.1.0"
 distribution = "2201.8.2"

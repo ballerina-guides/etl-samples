@@ -1,13 +1,18 @@
 version: '3'
-
 services:
   mysql-etl:
-    image: mysql:latest
+    image: mysql:8-oracle
     container_name: sql-etl
     ports:
       - "3306:3306"
     environment:
-      MYSQL_ROOT_PASSWORD: sqletl123
-    command: --authentication_policy=caching_sha2_password
+      - MYSQL_DATABASE=customer_order
+      - MYSQL_USER=dbuser
+      - MYSQL_PASSWORD=dbuser
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      interval: 1m30s
+      timeout: 20s
+      retries: 5
     volumes:
       - ./init-script.sql:/docker-entrypoint-initdb.d/script.sql

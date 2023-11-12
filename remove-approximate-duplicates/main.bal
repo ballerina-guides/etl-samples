@@ -27,7 +27,7 @@ function findDuplicates(Customer[] customers) returns [Customer[], Customer[]] {
 
 function getEditDistance(string value1, string value2) returns int {
     int|error value = random:createIntInRange(0, 10);
-    while value !is int {
+    if value !is int {
         value = random:createIntInRange(0, 10);
     }
     return value is int ? value : getEditDistance(value1, value2);

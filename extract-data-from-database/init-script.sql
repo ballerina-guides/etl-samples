@@ -1,7 +1,3 @@
--- Create TABLE
-CREATE DATABASE customer_order;
-USE customer_order;
-
 DROP TABLE IF EXISTS `OrderData`;
 DROP TABLE IF EXISTS `Customer`;
 
