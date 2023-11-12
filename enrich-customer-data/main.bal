@@ -31,7 +31,7 @@ type GeocodeResponse record {
 
 final http:Client geocodingClient = check new ("https://maps.googleapis.com");
 
-service /api/v1 on new http:Listener(8080) {
+isolated service /api/v1 on new http:Listener(8080) {
     resource function post customerWithGeoCode(Customer customer) returns GeoTaggedCustomer|error {
         GeocodeResponse response = check geocodingClient->
             /maps/api/geocode/'json(address = customer.address, key = geocodingAPIKey);

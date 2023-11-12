@@ -17,8 +17,9 @@ public function main() returns error? {
         labels: ["Type/NewFeature", "Priority/High"],
         states: [github:ISSUE_OPEN]
     };
-    stream<github:Issue, github:Error?> openHighPriorityFeatures = check githubClient->getIssues(REPO_OWNER, REPO_NAME, filters);
-    check from var feature in openHighPriorityFeatures
+    stream<github:Issue, github:Error?> openFeatures
+            = check githubClient->getIssues(REPO_OWNER, REPO_NAME, filters);
+    check from var feature in openFeatures
         do {
             io:println(feature.title);
         };

@@ -20,7 +20,7 @@ type LeadAnalytics record {|
     string opportunityStage;
 |};
 
-kafka:ConsumerConfiguration consumerConfiguration = {
+final kafka:ConsumerConfiguration consumerConfiguration = {
     groupId: "lead-uuid",
     topics: ["lead-analytics"],
     pollingInterval: 1,
@@ -31,7 +31,7 @@ final Client leadsDbClient = check new;
 
 listener kafka:Listener kafkaListener = new (kafka:DEFAULT_URL, consumerConfiguration);
 
-service on kafkaListener {
+isolated service on kafkaListener {
     remote function onConsumerRecord(kafka:Caller caller, LeadAnalytics[] leadsData) returns error? {
         LeadAnalyticsDataInsert[] insertData = from var lead in leadsData
             select {id: uuid:createType1AsString(), ...lead};

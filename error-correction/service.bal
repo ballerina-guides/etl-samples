@@ -28,8 +28,7 @@ type SaplingResponse record {|
 
 final http:Client saplingClient = check new ("https://api.sapling.ai");
 
-service /api/posts on new http:Listener(8080) {
-
+isolated service /api/posts on new http:Listener(8080) {
     resource function post spell\-check(SpellCheckRequest request) returns error? {
         SaplingRequest saplingRequest = {
             'key: apiKey,

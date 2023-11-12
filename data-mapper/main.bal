@@ -62,7 +62,6 @@ function getShipment(CustomerData customerData, OrderData orderData, InventoryDa
         name: customerData.firstName + " " + customerData.lastName,
         email: customerData.contact.email,
         phoneNumber: customerData.contact.phoneNumber
-
     },
     shippingAddress: {
         street: customerData.address.street,
