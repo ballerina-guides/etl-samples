@@ -3,9 +3,11 @@ services:
   mysql-etl:
     image: mysql:8-oracle
     container_name: sql-etl
+    restart: always
     ports:
       - "3306:3306"
     environment:
+      - MYSQL_ROOT_PASSWORD=root
       - MYSQL_DATABASE=customer_order
       - MYSQL_USER=dbuser
       - MYSQL_PASSWORD=dbuser
@@ -15,4 +17,4 @@ services:
       timeout: 20s
       retries: 5
     volumes:
-      - ./init-script.sql:/docker-entrypoint-initdb.d/script.sql
+      - ./init-script.sql:/docker-entrypoint-initdb.d/setup.sql
