@@ -34,12 +34,12 @@ dependencies = [
 
 [[package]]
 org = "etl_samples"
-name = "clean_sensitive_data"
+name = "clean_and_standardize_data"
 version = "0.1.0"
 dependencies = [
 	{org = "ballerina", name = "io"}
 ]
 modules = [
-	{org = "etl_samples", packageName = "clean_sensitive_data", moduleName = "clean_sensitive_data"}
+	{org = "etl_samples", packageName = "clean_and_standardize_data", moduleName = "clean_and_standardize_data"}
 ]
 
