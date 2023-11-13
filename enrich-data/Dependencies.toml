@@ -270,12 +270,12 @@ dependencies = [
 
 [[package]]
 org = "etl_samples"
-name = "enrich_customer_data"
+name = "enrich_data"
 version = "0.1.0"
 dependencies = [
 	{org = "ballerina", name = "http"}
 ]
 modules = [
-	{org = "etl_samples", packageName = "enrich_customer_data", moduleName = "enrich_customer_data"}
+	{org = "etl_samples", packageName = "enrich_data", moduleName = "enrich_data"}
 ]
 
