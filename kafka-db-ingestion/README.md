@@ -6,8 +6,8 @@
 [kafka_db_ingestion]
 host = "localhost"
 port = 3306
-user = "root"
-password = "root_password"
+user = "dbuser"
+password = "dbuser"
 database = "leads"
 ```
 

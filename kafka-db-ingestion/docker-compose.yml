@@ -25,9 +25,12 @@ services:
 
   mysql:
     image: mysql:8-oracle
+    restart: always
     environment:
-      - MYSQL_ROOT_PASSWORD=root_password
-      - MYSQL_DATABASE=customer_order
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_DATABASE=leads
+      - MYSQL_USER=dbuser
+      - MYSQL_PASSWORD=dbuser
     ports:
       - 3306:3306
     healthcheck:
