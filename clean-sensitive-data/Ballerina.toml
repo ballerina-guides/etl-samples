@@ -1,5 +1,0 @@
-[package]
-org = "etl"
-name = "clean_sensitive_data"
-version = "0.1.0"
-distribution = "2201.8.2"

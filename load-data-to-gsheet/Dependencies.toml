@@ -33,7 +33,7 @@ dependencies = [
 [[package]]
 org = "ballerina"
 name = "constraint"
-version = "1.4.0"
+version = "1.5.0"
 dependencies = [
 	{org = "ballerina", name = "jballerina.java"}
 ]
@@ -302,13 +302,13 @@ modules = [
 ]
 
 [[package]]
-org = "etl"
+org = "etl_samples"
 name = "load_data_to_gsheet"
 version = "0.1.0"
 dependencies = [
 	{org = "ballerinax", name = "googleapis.sheets"}
 ]
 modules = [
-	{org = "etl", packageName = "load_data_to_gsheet", moduleName = "load_data_to_gsheet"}
+	{org = "etl_samples", packageName = "load_data_to_gsheet", moduleName = "load_data_to_gsheet"}
 ]
 

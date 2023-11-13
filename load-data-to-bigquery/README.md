@@ -16,7 +16,7 @@ message         | STRING | REQUIRED
 
 ### 2. Configuring the Config.toml file
 1. Create a `Config.toml` file in the root directory and add the below content.
-```
+```toml
 bigQueryAccessToken = "<BIG_QUERY_ACCESS_TOKEN>"
 projectId = "<PROJECT_ID>"
 datasetId = "<DATASET_ID>"
@@ -29,6 +29,6 @@ tableId = "<TABLE_ID>"
 
 ### 3. Running the sample
 Run the following command from the root directory of the sample.
-```ballerina
+```sh
 $ bal run
 ```

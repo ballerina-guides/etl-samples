@@ -3,12 +3,12 @@
 ### 1. Configuring the Config.toml file
 1. Create a `Config.toml` file in the root directory and add the below content.
 ```toml
-[kafka_db_ingestion]
+[extract_data_from_database]
 host = "localhost"
 port = 3306
 user = "dbuser"
 password = "dbuser"
-database = "leads"
+database = "customer_order"
 ```
 
 ### 2. Running the kafka and sql services

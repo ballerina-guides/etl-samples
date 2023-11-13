@@ -1,5 +1,5 @@
 [package]
 org = "etl_samples"
-name = "load_data_to_gsheet"
+name = "enrich_data"
 version = "0.1.0"
 distribution = "2201.8.2"

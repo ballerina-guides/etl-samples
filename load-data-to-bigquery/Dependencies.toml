@@ -305,7 +305,7 @@ modules = [
 ]
 
 [[package]]
-org = "etl"
+org = "etl_samples"
 name = "load_data_to_bigquery"
 version = "0.1.0"
 dependencies = [
@@ -314,6 +314,6 @@ dependencies = [
 	{org = "ballerinax", name = "googleapis.bigquery"}
 ]
 modules = [
-	{org = "etl", packageName = "load_data_to_bigquery", moduleName = "load_data_to_bigquery"}
+	{org = "etl_samples", packageName = "load_data_to_bigquery", moduleName = "load_data_to_bigquery"}
 ]
 

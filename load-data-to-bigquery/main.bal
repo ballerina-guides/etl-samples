@@ -2,7 +2,12 @@ import ballerina/io;
 import ballerina/uuid;
 import ballerinax/googleapis.bigquery;
 
-public type SocialMediaInteraction record {|
+configurable string bigQueryAccessToken = ?;
+configurable string projectId = ?;
+configurable string datasetId = ?;
+configurable string tableId = ?;
+
+type SocialMediaInteraction record {|
     string customerId;
     string interactionId;
     string interactionType;
@@ -11,12 +16,7 @@ public type SocialMediaInteraction record {|
     string message;
 |};
 
-configurable string bigQueryAccessToken = ?;
-configurable string projectId = ?;
-configurable string datasetId = ?;
-configurable string tableId = ?;
-
-bigquery:Client bigQueryClient = check new ({auth: {token: bigQueryAccessToken}});
+final bigquery:Client bigQueryClient = check new ({auth: {token: bigQueryAccessToken}});
 
 public function main() returns error? {
     SocialMediaInteraction[] interactions = check io:fileReadCsv("./resources/interactions.csv");

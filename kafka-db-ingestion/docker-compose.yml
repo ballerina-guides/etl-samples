@@ -24,11 +24,19 @@ services:
       - zookeeper
 
   mysql:
-    image: mysql:latest
+    image: mysql:8-oracle
+    restart: always
     environment:
-      MYSQL_ROOT_PASSWORD: root_password
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_DATABASE=leads
+      - MYSQL_USER=dbuser
+      - MYSQL_PASSWORD=dbuser
     ports:
       - 3306:3306
-    command: --authentication_policy=caching_sha2_password
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      interval: 1m30s
+      timeout: 20s
+      retries: 5
     volumes:
-      - ./mysql-init.sql:/docker-entrypoint-initdb.d/script.sql
+      - ./generated/script.sql:/docker-entrypoint-initdb.d/script.sql

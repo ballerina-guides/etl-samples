@@ -85,6 +85,10 @@ dependencies = [
 	{org = "ballerina", name = "time"},
 	{org = "ballerina", name = "url"}
 ]
+modules = [
+	{org = "ballerina", packageName = "http", moduleName = "http"},
+	{org = "ballerina", packageName = "http", moduleName = "http.httpscerr"}
+]
 
 [[package]]
 org = "ballerina"
@@ -244,15 +248,6 @@ dependencies = [
 
 [[package]]
 org = "ballerina"
-name = "regex"
-version = "1.4.3"
-dependencies = [
-	{org = "ballerina", name = "jballerina.java"},
-	{org = "ballerina", name = "lang.string"}
-]
-
-[[package]]
-org = "ballerina"
 name = "task"
 version = "2.5.0"
 dependencies = [
@@ -277,50 +272,14 @@ dependencies = [
 ]
 
 [[package]]
-org = "ballerinai"
-name = "observe"
-version = "0.0.0"
-dependencies = [
-	{org = "ballerina", name = "jballerina.java"},
-	{org = "ballerina", name = "observe"}
-]
-
-[[package]]
-org = "ballerinax"
-name = "client.config"
-version = "1.0.1"
-dependencies = [
-	{org = "ballerina", name = "http"},
-	{org = "ballerina", name = "oauth2"}
-]
-
-[[package]]
-org = "ballerinax"
-name = "github"
-version = "4.6.0"
-dependencies = [
-	{org = "ballerina", name = "http"},
-	{org = "ballerina", name = "lang.runtime"},
-	{org = "ballerina", name = "log"},
-	{org = "ballerina", name = "mime"},
-	{org = "ballerina", name = "os"},
-	{org = "ballerina", name = "regex"},
-	{org = "ballerinai", name = "observe"},
-	{org = "ballerinax", name = "client.config"}
-]
-modules = [
-	{org = "ballerinax", packageName = "github", moduleName = "github"}
-]
-
-[[package]]
 org = "etl_samples"
-name = "extract_data_from_github"
+name = "error_correction"
 version = "0.1.0"
 dependencies = [
-	{org = "ballerina", name = "io"},
-	{org = "ballerinax", name = "github"}
+	{org = "ballerina", name = "http"},
+	{org = "ballerina", name = "io"}
 ]
 modules = [
-	{org = "etl_samples", packageName = "extract_data_from_github", moduleName = "extract_data_from_github"}
+	{org = "etl_samples", packageName = "error_correction", moduleName = "error_correction"}
 ]
 
