@@ -3,9 +3,10 @@
 ### 1. Configuring the Config.toml file
 1. Create a `Config.toml` file in the root directory and add the below content.
 ```toml
-googleapisAPIKey = "<GOOGLEAPIS_API_KEY>"  
+openAIKey = "<OPEN_AI_KEY>"
 ```
-2. Obtain a [Google API key](https://console.cloud.google.com/apis/credentials) and replace with `<GOOGLEAPIS_API_KEY>`.
+2. Create an [OpenAI account](https://platform.openai.com) and obtain 
+an [API key](https://platform.openai.com/account/api-keys) and replace with `<OPEN_AI_KEY>`.
 
 ### 2. Running the sample
 Run the following command from the root directory of the sample.
