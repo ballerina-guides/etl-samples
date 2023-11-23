@@ -12,10 +12,10 @@ Each subdirectory contains relevant code and instructions for the corresponding 
 #### Data Transformation (T)
 - [Remove Duplicates](remove-duplicates): Sample code for deduplication.
 - [Remove Approximate Duplicates](remove-approximate-duplicates): Sample code for approximate deduplication.
-- [Error Correction](error-correction): Sample code for error correction in data.
 - [Clean and Standardize Data](clean-and-standardize-data): Sample code for cleaning and standardizing data.
 - [Data Mapper](data-mapper): Sample code for data mapping between different structures.
 - [Enrich Data](enrich-data): Sample code to enrich data.
+- [Sentiment Analysis](sentiment-analysis): Sample code for analyse feedbacks.
 
 #### Data Loading (L)
 - [Load Data to BigQuery](load-data-to-bigquery): Sample code for loading data into BigQuery.
