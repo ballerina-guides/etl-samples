@@ -1,0 +1,5 @@
+[package]
+org = "etl_samples"
+name = "refine_data_using_ai"
+version = "0.1.0"
+distribution = "2201.8.0"
